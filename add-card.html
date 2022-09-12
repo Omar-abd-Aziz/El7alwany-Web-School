@@ -460,8 +460,8 @@ getCit(db, 'Cards01').then(async (e) => {
   <div class="box gallery-box">
     <div class="image">
       <img src="${urlForGallery}" alt="" />
-      <button id="btnForDelImg" style="display: none; margin: 5px auto 10px;">Delet</button>
     </div>
+    <button id="btnForDelImg" style="display: none;"></button>
   </div>
 
 
@@ -575,7 +575,9 @@ function getImgs()
 
   let x = Array.from(document.querySelectorAll("#btnForDelImg")).forEach(button=>button.addEventListener("click",()=>{
 
-    let S =event.srcElement.parentNode.parentNode
+    let S =event.srcElement.parentNode
+
+    console.log(S)
 
     S.remove()
 
