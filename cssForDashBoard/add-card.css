@@ -346,7 +346,7 @@ body > #main > #textCard
   width: 30px;
   height: 30px;
   display: block !important;
-  background-image: url(./imgs/delete-button.png);
+  background-image: url(../imgs/delete-button.png);
   background-size: cover;
   border: 2px solid black;
   border-radius: 50%;
