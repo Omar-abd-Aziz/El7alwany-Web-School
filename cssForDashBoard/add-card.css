@@ -1,3 +1,41 @@
+
+
+
+/*start div for lodaing*/
+
+.LogoForOpen
+{
+  width: 110%;
+  height: 110%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 7;
+  background-color: black;
+}
+
+.LogoForOpen > img
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/*end div for loding*/
+
+
+
+
+
+
+
+
+
 html 
 {
     scroll-behavior: smooth;
@@ -7,6 +45,7 @@ body
 {
     font-family: "Cairo", sans-serif;
     background: #eee;
+    margin: 0;
 }
 
 a 
@@ -419,4 +458,3 @@ body > #main > #textCard
 
 
 /* end div for gallery img on click */
-
