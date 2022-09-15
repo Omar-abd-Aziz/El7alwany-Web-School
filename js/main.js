@@ -66,6 +66,7 @@ window.onscroll = function () {
 
 function startCount(el) {
   let goal = el.dataset.goal;
+  el.textContent=0;
   let count = setInterval(() => {
     el.textContent++;
     if (el.textContent == goal) {
