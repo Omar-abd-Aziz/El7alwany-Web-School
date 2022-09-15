@@ -12,6 +12,21 @@
     <!-- end icon -->
   </head>
   <body>
+
+
+
+
+
+
+    <!-- start div for gallery img on click -->
+
+    <div id="gallerySp">
+      <img src="" alt="" id="imgSp">
+      <button id="btnSp">X</button>
+    </div>
+
+    <!-- end div for gallery img on click -->    
+
     
     
     
@@ -572,6 +587,8 @@ function getImgs()
 
   document.querySelector("#dadOfImgs").innerHTML = I
 
+  setTimeout(catchImgForOpen, 1000)
+
 
   let x = Array.from(document.querySelectorAll("#btnForDelImg")).forEach(button=>button.addEventListener("click",()=>{
 
@@ -618,7 +635,44 @@ function getImgs()
 
 
 
+////////////////////////* start function for gallery imgs to fill screen on click *////////////////////////////
 
+function catchImgForOpen(){
+
+let galleryBox = document.querySelectorAll(".gallery-box")
+
+
+
+galleryBox.forEach(e=>{
+let c=e
+
+
+
+c.addEventListener("click", ()=>{
+
+let src = c.childNodes[1].childNodes[1].src
+
+document.querySelector("#imgSp").src=`${src}`
+document.querySelector("#gallerySp").style.display="block"     
+
+})
+      
+      
+})
+
+document.querySelector("#btnSp").addEventListener("click", ()=>{
+document.querySelector("#gallerySp").style.display="none"
+})
+
+}  
+
+
+
+
+
+
+
+////////////////////////* end function for gallery imgs to fill screen on click *////////////////////////////
 
 
 
