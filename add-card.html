@@ -14,9 +14,11 @@
   <body>
 
 
-
-
-
+    <!-- start Loading -->
+    <div class="LogoForOpen">
+      <img src="imgs/loding.gif" id="imgLoding">
+    </div>
+    <!-- end Loading -->
 
     <!-- start div for gallery img on click -->
 
@@ -675,12 +677,19 @@ document.querySelector("#gallerySp").style.display="none"
 ////////////////////////* end function for gallery imgs to fill screen on click *////////////////////////////
 
 
+////////////////////////* start function for loading *///////////////////////////////////////////////////////
+
+window.onload=()=>{
+
+  setTimeout(()=>{
+  document.querySelector(".LogoForOpen").style.display="none"
+
+}, 2000)
+
+}
 
 
-
-
-
-
+////////////////////////* end function for loading *///////////////////////////////////////////////////////
 
 
   </script>
