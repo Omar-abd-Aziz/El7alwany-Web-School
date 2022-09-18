@@ -1,3 +1,24 @@
+/* start style for videos section*/
+#videos > div > div > div.preview
+{
+  width: 100% !important;
+}
+
+@media (min-width: 1000px)
+{
+  #videos > div > div > div.preview
+{
+  width: 100% !important;
+  min-height: 420px;
+}
+}
+/*end style for videos section */
+
+
+
+
+
+
 /*start btn for scroll*/
 #btnup 
 {
