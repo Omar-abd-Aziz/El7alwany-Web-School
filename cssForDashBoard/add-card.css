@@ -1,5 +1,93 @@
+/* start div for videos */
 
 
+#mainVideoDivForm
+{
+  width: 300px;
+  padding: 20px 25px 20px 20px;
+  border-radius: 6px;
+  background: #0078B7;
+  margin: 20px auto;
+  color: white;
+}
+
+
+#VideoName,
+#linkOfYoutubeVideo
+{
+  width: 94%;
+  margin: 5px auto;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+
+#addVideo
+{
+  width: 100%;
+  margin: 5px auto;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/**/
+.videoParent
+{
+  background: white;
+  width: 80%;
+  margin: auto;
+  border: none;
+  border-radius: 6px;
+  padding: 20px;
+  font-size: 22px;
+}
+
+.videoParent > .videoDad
+{
+  width: 100%;
+}
+
+.videoParent > .videoDad > .videoTitleInfo
+{
+  text-align: center;
+  width: 70%;
+  margin: 10px auto;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.videoParent > .videoDad > .videoTitleInfo > a
+{
+  display: block !important;
+}
+
+.videoParent > .videoDad  .btnForDelVideo
+{
+  cursor: pointer;
+  display: block !important;
+  width: 25px;
+  height: 23px;
+  text-align: center;
+  margin: auto;
+  background: red;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+}
+
+/**/
+
+/* end div for videos */
 
 /*start div for lodaing*/
 
