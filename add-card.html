@@ -101,9 +101,61 @@
         <div id="dadOfImgs" class="container">
         </div>
       </div>
+
+
+    <br><br><br><br>
+
     <!-- End Div For Cards -->
 
 
+    <hr>
+
+
+    <!-- start div for videos -->
+
+    <center><h1>Add videos</h1></center>
+
+    <div id="mainVideoDivForm">
+
+      <input type="text" id="VideoName" placeholder="VideoName">
+      
+      <input type="text" id="linkOfYoutubeVideo" placeholder="link Of Youtube Video">
+      
+      <button id="addVideo">Add Card</button>
+
+    </div>
+
+
+    <br><br>
+
+    <div class="videoParent">
+      <ul class="videoDad">
+
+        <li data-lik="omar" class="videoTitleInfo">
+          name or title
+          <a href="#" style="display: none;">Link</a>
+          <span style="display: none;" class="btnForDelVideo">X</span>
+        </li>
+
+        <li data-lik="omar" class="videoTitleInfo">
+          name or title
+          <a href="#" style="display: none;" >Link</a>
+          <span style="display: none;" class="btnForDelVideo">X</span>
+        </li>
+
+        <li data-lik="omar" class="videoTitleInfo">
+          name or title
+          <a href="#" style="display: none;">Link</a>
+          <span style="display: none;" class="btnForDelVideo">X</span>
+        </li>
+        
+
+      </ul>
+    </div>
+
+
+    <br><br><br>
+    <!-- end div for videos -->
 
 
 
@@ -690,6 +742,177 @@ window.onload=()=>{
 
 
 ////////////////////////* end function for loading *///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////* start function for add video *///////////////////////////////////////////////////////
+
+let videoDad = document.querySelector(".videoDad")
+document.querySelector("#addVideo").addEventListener("click", ()=>{
+  let VideoName = document.querySelector("#VideoName").value
+  let linkYTvideo = document.querySelector("#linkOfYoutubeVideo").value
+  
+  if(
+    VideoName!==""&&
+    linkYTvideo!==""
+    )
+    {
+
+
+
+      /**/
+      saveVideo(linkYTvideo, VideoName)
+      /**/
+
+      document.querySelector("#VideoName").value=""
+      document.querySelector("#linkOfYoutubeVideo").value=""
+      
+
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+/* start function to upload video*/
+
+async function saveVideo(videoLink, videoTitle)
+{
+
+  videoLink = videoLink.replace("https://youtu.be/", "https://www.youtube.com/embed/")
+
+
+
+/*start get*///////////////////////////////////////////
+let I;
+let V;
+
+getCit(db, 'Cards01').then(async (e) => {
+
+  V = e;
+
+  I = V[2].videosDad;
+
+  console.log(I)
+
+  I +=`
+
+
+  <li data-link="${videoLink}" class="videoTitleInfo">
+    ${videoTitle}
+    <a href="${videoLink}" style="display: none;">Link</a>
+    <span style="display: none;" class="btnForDelVideo">X</span>
+  </li>
+
+
+  
+  `;
+
+
+
+
+/*start post*/
+setDoc(doc(db, "Cards01", 'dad-video'), {
+    videosDad: `${I}`,
+});
+/*end post*/
+
+
+
+getVideos()
+
+})
+
+}
+
+/* end function to upload video*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* start get videos */
+function getVideos()
+  {
+
+  getCit(db, 'Cards01').then(async (e) => {
+  
+
+  let G,I;
+  G = e;
+
+  I = G[2].videosDad;
+
+
+  document.querySelector(".videoDad").innerHTML = I
+
+
+
+  let x = Array.from(document.querySelectorAll(".btnForDelVideo")).forEach(button=>button.addEventListener("click",()=>{
+
+    let S =event.srcElement.parentNode
+
+    console.log(S)
+
+    S.remove()
+
+
+    /*save*/
+
+    let dadOfVideos = document.querySelector(".videoDad").innerHTML
+
+    
+    setDoc(doc(db, "Cards01", 'dad-video'), {
+    videosDad: `${dadOfVideos}`,
+    });
+    
+
+    /*save*/
+
+
+  }))
+
+
+  })
+  }
+/* end get videos */
+
+getVideos()
+
+
+////////////////////////* end function for add video *///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
 
 
   </script>
