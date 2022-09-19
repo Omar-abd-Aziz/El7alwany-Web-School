@@ -656,13 +656,13 @@ Front-end developers work on what the user can see while back-end developers bui
         </div>
         <div class="box">
           <i class="fas fa-code fa-2x fa-fw"></i>
-          <span class="number NumOfProjects" data-goal="1">0</span>
+          <span class="number NumOfProjects" data-goal="">0</span>
           <span class="text">Projects</span>
         </div>
         <div class="box">
-          <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-          <span class="number" data-goal="2">0</span>
-          <span class="text">Countries</span>
+          <i class="fas fa-solid fa-video fa-2x fa-fw"></i>
+          <span class="number NumOfVideos" data-goal="">0</span>
+          <span class="text">Videos</span>
         </div>
         <div class="box">
           <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
@@ -886,7 +886,8 @@ Front-end developers work on what the user can see while back-end developers bui
       window.onload=()=>{
 
         document.querySelector(".NumOfProjects").dataset.goal = localStorage.getItem("NumOfProjects")
-        
+        document.querySelector(".NumOfVideos").dataset.goal = localStorage.getItem("NumOfVideos")
+
         getImgs()
         getCards()
         getVideos()
@@ -894,13 +895,19 @@ Front-end developers work on what the user can see while back-end developers bui
 
           document.querySelector(".LogoForOpen").style.display="none"
 
+          /*start get number of projects*/
           let NumOfProjects = document.querySelectorAll("#articles > div > div").length
-
           document.querySelector(".NumOfProjects").innerHTML = 0
           document.querySelector(".NumOfProjects").dataset.goal = NumOfProjects
-
           localStorage.setItem("NumOfProjects", NumOfProjects)
+          /*end get number of projects*/
 
+          /*start get number of projects*/
+          let NumOfVideos = document.querySelectorAll(".videosDad > li").length
+          document.querySelector(".NumOfVideos").innerHTML = 0
+          document.querySelector(".NumOfVideos").dataset.goal = NumOfVideos
+          localStorage.setItem("NumOfVideos", NumOfVideos)
+          /*end get number of projects*/
           
 
         }, 2000)
