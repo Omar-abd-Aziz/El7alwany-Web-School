@@ -13,6 +13,16 @@
   </head>
   <body>
 
+    <!-- start Loading -->
+    <div class="LoginDiv">
+      <div class="formForLogin">
+        <input type="text" id="Login-input" placeholder="Enter The Admin Code..">
+        <button class="btnForLogin">Ok</button>
+      </div>
+    </div>
+
+    <button class="Logout">Logout</button>
+    <!-- end Loading -->
 
     <!-- start Loading -->
     <div class="LogoForOpen">
@@ -907,9 +917,62 @@ getVideos()
 ////////////////////////* end function for add video *///////////////////////////////////////////////////////
 
 
+////////////////////////* start function to login*/////////////////////////////////////
+
+document.querySelector(".btnForLogin").addEventListener("click", ()=>{
+  login()
+})
+
+
+async function login()
+{
+  
+  
+
+  /**/
+  getCit(db, 'me01').then(async (e) => {
+    let adminCode = e[0].code
+
+    if (document.querySelector("#Login-input").value==adminCode)
+    {
+      localStorage.setItem("user", 1)
+      document.querySelector("#Login-input").value=""
+    } else {
+      document.querySelector("#Login-input").value=""
+    }
+
+
+  })
+  /**/
+
+}
 
 
 
+function checkLogin()
+{
+  if (localStorage.getItem("user")!=1)
+  {
+    document.querySelector(".LoginDiv").style.display="block"
+  } else
+  {
+    document.querySelector(".LoginDiv").style.display="none"
+  }
+
+  
+  document.querySelector(".Logout").addEventListener("click", ()=>{
+    localStorage.setItem("user",0)
+  })
+
+
+}
+
+setInterval(checkLogin, 500)
+
+
+
+
+////////////////////////* end function to login*/////////////////////////////////////
 
 
 
