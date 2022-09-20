@@ -1,3 +1,30 @@
+/* start navbar icon */
+.fa-gears:before
+{
+  content: "\f279";
+}
+
+.fa-display:before
+{
+  content: "\f121";
+}
+
+.fa-gauge:before
+{
+  content: "\f118";
+}
+
+.fa-money-bill-alt:before {
+  content: "\f302";
+}
+
+
+/* end navbar icon */
+
+
+
+
+
 /* start style for videos section*/
 #videos > div > div > div.preview
 {
