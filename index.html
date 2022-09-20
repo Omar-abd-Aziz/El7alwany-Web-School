@@ -48,7 +48,7 @@
         <ul class="main-nav">
           <li><a href="#articles">Projects</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#videos">Top Videos</a></li>
           <li>
             <a href="#">Other Links</a>
             <!-- Start Megamenu -->
@@ -58,7 +58,7 @@
               </div>
               <ul class="links">
                 <li>
-                  <a href="#videos"><i class="far fa-play-circle fa-fw"></i> Top Videos</a>
+                  <a href="#services"><i class="far fa-s  olid fa-gears fa-fw"></i> Services</a>
                 </li>
                 <li>
                   <a href="#our-skills"><i class="far fa-check-circle fa-fw"></i> Our Skills</a>
@@ -85,10 +85,10 @@
                   <a href="#pricing"><i class="fas fa-server fa-fw"></i> Pricing Plans</a>
                 </li>
                 <li>
-                  <a href="#testimonials"><i class="far fa-comments fa-fw"></i> Testimonials</a>
+                  <a href="#testimonials"><i class="far fa-gauge fa-fw"></i> Testimonials</a>
                 </li>
                 <li>
-                  <a href="#discount"><i class="fas fa-percent fa-fw"></i> Request A Discount</a>
+                  <a href="add-card.html"><i class="fas fa-solid fa-display fa-fw"></i> Dashboard</a>
                 </li>
               </ul>
 
@@ -666,8 +666,8 @@ Front-end developers work on what the user can see while back-end developers bui
         </div>
         <div class="box">
           <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-          <span class="number" data-goal="1000">0</span>
-          <span class="text">Money</span>
+          <span class="number NumOfImges" data-goal="1000">0</span>
+          <span class="text">Images</span>
         </div>
       </div>
     </div>
@@ -887,6 +887,7 @@ Front-end developers work on what the user can see while back-end developers bui
 
         document.querySelector(".NumOfProjects").dataset.goal = localStorage.getItem("NumOfProjects")
         document.querySelector(".NumOfVideos").dataset.goal = localStorage.getItem("NumOfVideos")
+        document.querySelector(".NumOfImges").dataset.goal = localStorage.getItem("NumOfImges")
 
         getImgs()
         getCards()
@@ -907,6 +908,13 @@ Front-end developers work on what the user can see while back-end developers bui
           document.querySelector(".NumOfVideos").innerHTML = 0
           document.querySelector(".NumOfVideos").dataset.goal = NumOfVideos
           localStorage.setItem("NumOfVideos", NumOfVideos)
+          /*end get number of projects*/
+
+          /*start get number of projects*/
+          let NumOfImges = document.querySelectorAll(".imgs-dad > .gallery-box").length
+          document.querySelector(".NumOfImges").innerHTML = 0
+          document.querySelector(".NumOfImges").dataset.goal = NumOfImges
+          localStorage.setItem("NumOfImges", NumOfImges)
           /*end get number of projects*/
           
 
@@ -1024,3 +1032,7 @@ window.onclick = (e) => {
 
 
 </html>
+
+
+
+
